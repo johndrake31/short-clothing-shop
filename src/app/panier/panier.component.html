@@ -1,0 +1,21 @@
+<table class="col-6">
+  <thead>
+      <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th></th>
+    </tr>
+</thead>
+
+  <tbody>
+      <tr *ngFor="let short of shorts">
+        <td>{{short.name}}</td>
+        <td>{{short.price}}</td>
+        <td>{{short.color}}</td>
+        <td>{{short.size}}</td>
+        <td><button class="btn-danger btn btn-sm">remove</button></td>
+      </tr>
+  </tbody>
+</table>

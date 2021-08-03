@@ -1,0 +1,25 @@
+<br>
+<hr>
+<div class="container m-5">
+    <div class="rov">
+        <div class="col-6 p-3">
+            <h3>ADD A NEW SHORT</h3>
+            <button routerLink="/home" class="btn btn-light">Main Shorts Page</button>
+            <form [formGroup]="form" class="big-box" (ngSubmit)="addShort()">
+            <div class="container m-5">
+                <div class="row">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name">
+            
+                <label for="size">Size</label>
+                <input type="text" formControlName="size">
+            
+                <label for="color">Color</label>
+                <input type="text" formControlName="color">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Add Short</button>
+            </form>
+        </div>
+    </div>
+</div>
