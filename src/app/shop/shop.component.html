@@ -1,13 +1,15 @@
 <div class="container m-5">
     <h1 class="text-center mb-3">SHORTS INDEX</h1>
-    <button routerLink="/newshort" class="btn btn-light">ADD A NEW SHORT</button>
+     <button routerLink="/cart" class="btn btn-warning m-1">Panier {{basketCount()}}</button>
     <div class="row">
         <div *ngFor="let short of shorts" class="col-4">
             <h3>Name: {{short.name}}</h3>
             <h5 >Color: <span [style.color]="short.color">{{short.color}} </span></h5>
             <p>Size: {{short.size}}</p>
-            <button class="btn btn-danger">Delete</button>
-            <button class="btn btn-danger">Add to Cart</button>
+            <p>price: ${{short.price}}</p>
+
+            <button (click)="suppr(short.id)" class="btn btn-danger m-1">Delete</button>
+            <button (click)="addToBasket(short)"  class="btn btn-primary m-1">Add to Cart</button>
         </div>
     </div>
 </div>

@@ -1,21 +1,34 @@
-<table class="col-6">
-  <thead>
-      <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th></th>
-    </tr>
-</thead>
-
-  <tbody>
-      <tr *ngFor="let short of shorts">
-        <td>{{short.name}}</td>
-        <td>{{short.price}}</td>
-        <td>{{short.color}}</td>
-        <td>{{short.size}}</td>
-        <td><button class="btn-danger btn btn-sm">remove</button></td>
+<div class="container m-4">
+  <table class="col-8">
+    <thead>
+        <tr class="bg-dark m-2">
+        <th class="text-light">Name</th>
+        <th class="text-light">Price</th>
+        <th class="text-light">Color</th>
+        <th class="text-light">Size</th>
+        <th class="text-light"></th>
       </tr>
-  </tbody>
-</table>
+  </thead>
+
+    <tbody>
+        <tr *ngFor="let short of basket">
+          <td>{{short.name}}</td>
+          <td>{{short.price}}</td>
+          <td>{{short.color}}</td>
+          <td>{{short.size}}</td>
+          <td><button (click)="removeFromBasket(short)" class="btn-danger btn btn-sm">remove</button></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="bg-dark m-2">
+          <td></td>
+          <td></td>
+          <td class="text-light">TOTAL:</td>
+          <td></td>
+          <td class="text-light">{{totalPrice()}}</td>
+        </tr>
+
+    </tfoot>
+  </table>
+</div>
+

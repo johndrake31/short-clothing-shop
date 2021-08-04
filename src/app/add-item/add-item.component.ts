@@ -21,7 +21,8 @@ export class AddItemComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       size: ['', Validators.required],
-      color: ['', Validators.required]
+      color: ['', Validators.required],
+      price: ['', Validators.required],
 
     });
   }
