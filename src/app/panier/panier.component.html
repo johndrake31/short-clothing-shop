@@ -1,9 +1,11 @@
 <div class="container m-4">
-  <table class="col-8">
+  <table class="col-8 p-2">
     <thead>
         <tr class="bg-dark m-2">
         <th class="text-light">Name</th>
         <th class="text-light">Price</th>
+        <th class="text-light">Quantity</th>
+        <th class="text-light">Sub-Total</th>
         <th class="text-light">Color</th>
         <th class="text-light">Size</th>
         <th class="text-light"></th>
@@ -12,23 +14,27 @@
 
     <tbody>
         <tr *ngFor="let short of basket">
-          <td>{{short.name}}</td>
-          <td>{{short.price}}</td>
-          <td>{{short.color}}</td>
-          <td>{{short.size}}</td>
+          <td>{{short.name|titlecase}}</td>
+          <td>{{short.price|currency}}</td>
+          <td>{{short.qty}}</td>
+          <td>sub-tot</td>
+          <td [style.color]="short.color">{{short.color}}</td>
+          <td>{{short.size|uppercase}}</td>
           <td><button (click)="removeFromBasket(short)" class="btn-danger btn btn-sm">remove</button></td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr class="bg-dark m-2">
+      <tfoot class="bg-dark p-2">
+        <tr>
+          <td></td>
           <td></td>
           <td></td>
           <td class="text-light">TOTAL:</td>
           <td></td>
-          <td class="text-light">{{totalPrice()}}</td>
+          <td class="text-light">{{totalPrice()|currency}}</td>
         </tr>
 
     </tfoot>
   </table>
+
 </div>
 
